@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class CalculateTax {
+    public static void main(String[] args) {
+
+        double taxRateFirstRange = 0.18;
+        double taxRateSecondRange = 0.08;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the payment amount: ");
+        double amount = input.nextInt();
+        System.out.println("Payment amount (excluding tax): " + amount);
+
+        double taxAmount = amount < 1000 ? (amount * taxRateFirstRange) : (amount * taxRateSecondRange);
+        System.out.println("Tax amount: " + taxAmount);
+
+        double amountIncludingTax = amount + taxAmount;
+        System.out.println("Payment amount (including tax): " + amountIncludingTax);
+
+    }
+}
